@@ -7,6 +7,11 @@ class _404
 {
     function __construct()
     {
+        // echo "Page not found";
+    }
+
+    public function index()
+    {
         echo "Page not found";
     }
 }
