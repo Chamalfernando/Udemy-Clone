@@ -1,16 +1,22 @@
 <?php
 
 class App{
-    function __construct($str='default value')
+
+    protected $controller = '_404';
+
+    function __construct()
     {
-        echo "here".$str."<br>";
-        print_r($_GET)."<br>"; 
-        echo "<br>";
-        print_r($this->getURL());
-    }
+        $arr = $this->getURL();
 
-    function another(){
+        $filename = "../app/controllers/".ucfirst($arr[0]).".php";
+        if(file_exists($filename)){
+            require $filename;
+            $this->controller = $arr[0];
+        }else{
+            require "../app/controllers/".$this->controller.".php";
+        }
 
+        $mycontroller = new $this->controller();
     }
 
     private function getURL(){
@@ -22,5 +28,3 @@ class App{
 }
 
 $app1 = new App();
-echo "<br>";
-$app = new App('my name','your name'); // constructor will call.
