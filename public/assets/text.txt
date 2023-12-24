@@ -1,0 +1,1 @@
+We can create a .htaccess file instead of an index.php file also.
