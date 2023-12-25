@@ -3,7 +3,6 @@
 /**
  * Home page
  */
-
 class Home
 {
     function __construct()
@@ -12,7 +11,7 @@ class Home
     }
 
     public function index($id){
-        echo "home view page".$id;
+        echo "home view page ".$id;
     }
 
     public function edit()
@@ -24,4 +23,9 @@ class Home
     {
         echo "home deleting ".$id;
     }
+
+    // public function delete($id1,$id2= null,$id3 = null)
+    // {
+    //     echo "home deleting ".$id3;
+    // }
 }
