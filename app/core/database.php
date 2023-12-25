@@ -21,11 +21,15 @@ class Database
             $check = $stm->execute($data);
             if($check)
             {
-                $type = PDO::FETCH_OBJ;
-                if($type != 'object')
+                if($type == 'object')
                 {
+                    $type = PDO::FETCH_OBJ;
+                }
+                else{
                     $type = PDO::FETCH_ASSOC;
                 }
+                // show(PDO::FETCH_OBJ);
+                // show(PDO::FETCH_ASSOC);
 
                 $result = $stm->fetchAll($type);
                 if(is_array($result) && count($result)>0)
@@ -36,6 +40,25 @@ class Database
         }
         return false;
 
+   }
+
+
+   public function create_tables()
+   {
+    // users table
+        $query = "
+        CREATE TABLE IF NOT EXISTS `users` (
+            `id` int(11) NOT NULL AUTO_INCREMENT,
+            `email` varchar(100) NOT NULL,
+            `password` varchar(255) NOT NULL,
+            `date` date DEFAULT NULL,
+            PRIMARY KEY (`id`),
+            KEY `email` (`email`),
+            KEY `date` (`date`)
+           ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+        ";
+
+        $this->query($query);
    }
 
    // Reason to create Prepared Statements
