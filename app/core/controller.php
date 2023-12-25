@@ -1,6 +1,5 @@
 <?php
 
-
 // this is the main controller file of the system.
 // Main controller class.
 
