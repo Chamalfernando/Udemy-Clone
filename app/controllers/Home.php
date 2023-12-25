@@ -3,7 +3,7 @@
 /**
  * Home page
  */
-class Home
+class Home extends Controller
 {
     function __construct()
     {
@@ -11,18 +11,26 @@ class Home
     }
 
     public function index(){
-        echo "home view page ";
-    }
+        // $data1['var'] = "this is my variable"; 
+        // array location is 'var'.
+        // $this->view('home',$data1);
 
-    public function edit()
-    {
-        echo "home editing";
+        $data['title'] = "Home";
+        $this->view('home',$data);
     }
+    // public function index(){
+    //     echo "home view page ";
+    // }
 
-    public function delete()
-    {
-        echo "home deleting ";
-    }
+    // public function edit()
+    // {
+    //     echo "home editing";
+    // }
+
+    // public function delete()
+    // {
+    //     echo "home deleting ";
+    // }
 
     // public function delete($id1,$id2= null,$id3 = null)
     // {
