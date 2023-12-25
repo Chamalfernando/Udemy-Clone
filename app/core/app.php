@@ -18,7 +18,8 @@ class App{
             require "../app/controllers/".$this->controller.".php";
         }
 
-        show($arr);
+        //show($arr);
+        // can see the array list indexing.
 
         $mycontroller = new $this->controller();
         $mymethod = $arr[1]??$this->method;
@@ -34,7 +35,8 @@ class App{
         }
         
         $arr = array_values($arr); 
-        show($arr);
+        // show($arr);
+        // can see the array list indexing.
         call_user_func_array([$mycontroller,$this->method],$arr);
     }
 
