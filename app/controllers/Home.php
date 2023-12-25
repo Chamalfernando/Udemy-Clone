@@ -15,7 +15,7 @@ class Home extends Controller
         // $res = $db->query("SELECT * from users",[],'array');
         $res = $db->query("SELECT * from users");
 
-        show($res);
+        // show($res);
 
         // $users = new User();
         // $users->insert();
