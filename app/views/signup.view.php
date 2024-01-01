@@ -64,14 +64,14 @@
                     <p class="text-center small">Enter your personal details to create account</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
-                    <div class="col-12">
+                  <form method="post" class="row g-3 needs-validation" novalidate>
+                    <div class="col-6">
                       <label for="yourName" class="form-label">First Name</label>
                       <input type="text" name="firstname" class="form-control" id="yourName" required>
                       <div class="invalid-feedback">Please, enter your first name!</div>
                     </div>
 
-                    <div class="col-12">
+                    <div class="col-6">
                       <label for="yourName2" class="form-label">Last Name</label>
                       <input type="text" name="lastname" class="form-control" id="yourName2" required>
                       <div class="invalid-feedback">Please, enter your last name!</div>
@@ -95,6 +95,11 @@
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
                       <input type="password" name="password" class="form-control" id="yourPassword" required>
+                      <div class="invalid-feedback">Please enter your password!</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="yourPassword" class="form-label">Retype Password</label>
+                      <input type="password" name="retype_password" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
 
